@@ -10,6 +10,10 @@ public class Number {
 
 	Number() {}
 
+	public Number(ArrayList<Integer> numbers) {
+		this.numbers = numbers;
+	}
+
 	public Number(String numbers) {
 		for (String number : numbers.split(SPLIT)) {
 			this.numbers.add(Integer.parseInt(number));

@@ -1,10 +1,15 @@
 package baseball.service;
 
+import baseball.repository.CorrectRepository;
+
 public class BaseballGame {
+	private CorrectRepository correct;
 
 	public BaseballGame() {}
 
-	// 정답 설정
+	public void createCorrect() {
+		correct = new CorrectRepository();
+	}
 
 	// 사용자 입력값을 이용하여 사용자 답 설정
 
