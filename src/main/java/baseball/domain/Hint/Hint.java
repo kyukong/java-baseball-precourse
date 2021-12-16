@@ -1,11 +1,18 @@
 package baseball.domain.Hint;
 
-public class Hint {
-	private int ball = 0;
-	private int strike = 0;
+import static baseball.domain.Number.NumberFormat.*;
 
-	public Hint(int ball, int strike) {
-		this.ball = ball;
-		this.strike = strike;
+public class Hint {
+	int ball = 0;
+	int strike = 0;
+
+	public Hint() {}
+
+	public void addBall() {
+		ball += ADD_HINT.getNumber();
+	}
+
+	public void addStrike() {
+		strike += ADD_HINT.getNumber();
 	}
 }

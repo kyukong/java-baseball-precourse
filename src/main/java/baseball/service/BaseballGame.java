@@ -20,7 +20,8 @@ public class BaseballGame {
 	}
 
 	public void compare() {
-		hint = new HintRepository(correct, answer);
+		hint = new HintRepository();
+		hint.score(correct, answer);
 	}
 
 	// 힌트에 따른 결과 출력

@@ -5,16 +5,12 @@ import java.util.ArrayList;
 
 import static baseball.domain.Number.NumberFormat.*;
 
-public class HintRepository {
-	private int ball = 0;
-	private int strike = 0;
-
-	public HintRepository(CorrectRepository correct, AnswerRepository answer) {
-		score(correct, answer);
-		new Hint(ball, strike);
+public class HintRepository extends Hint {
+	public HintRepository() {
+		super();
 	}
 
-	private void score(CorrectRepository correctRepository, AnswerRepository answerRepository) {
+	public void score(CorrectRepository correctRepository, AnswerRepository answerRepository) {
 		ArrayList<Integer> correct = correctRepository.getNumbers();
 		ArrayList<Integer> answer = answerRepository.getNumbers();
 		for (int i = 0; i < NUMBER_COUNT.getNumber(); i++) {
@@ -23,10 +19,10 @@ public class HintRepository {
 				continue;
 			}
 			if (nowAnswer == correct.indexOf(i)) {
-				strike += ADD_HINT.getNumber();
+				addBall();
 				continue;
 			}
-			ball += ADD_HINT.getNumber();
+			addStrike();
 		}
 	}
 }
