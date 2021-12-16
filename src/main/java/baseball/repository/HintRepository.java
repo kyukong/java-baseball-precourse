@@ -4,6 +4,8 @@ import baseball.domain.Hint.Hint;
 import java.util.ArrayList;
 
 import static baseball.domain.Number.NumberFormat.*;
+import static baseball.domain.Hint.HintType.*;
+import static baseball.view.Print.*;
 
 public class HintRepository extends Hint {
 	public HintRepository() {
@@ -24,5 +26,25 @@ public class HintRepository extends Hint {
 			}
 			addStrike();
 		}
+	}
+
+	public void show() {
+		String hintMessage = getHintMessage();
+		printHint(hintMessage);
+	}
+
+	private String getHintMessage() {
+		String hintMessage = "";
+
+		if (this.getBall() != 0) {
+			hintMessage += this.getBall() + BALL.getName() + " ";
+		}
+		if (this.getStrike() != 0) {
+			hintMessage += this.getStrike() + STRIKE.getName();
+		}
+		if (hintMessage.equals("")) {
+			hintMessage += NOTHING.getName();
+		}
+		return hintMessage;
 	}
 }

@@ -33,6 +33,6 @@ public class BaseballGameController {
 	private void showHint() {
 		game.compare();
 
-		// 힌트 출력
+		game.showHint();
 	}
 }

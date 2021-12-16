@@ -24,5 +24,7 @@ public class BaseballGame {
 		hint.score(correct, answer);
 	}
 
-	// 힌트에 따른 결과 출력
+	public void showHint() {
+		hint.show();
+	}
 }

@@ -8,6 +8,14 @@ public class Hint {
 
 	public Hint() {}
 
+	public int getBall() {
+		return this.ball;
+	}
+
+	public int getStrike() {
+		return this.strike;
+	}
+
 	public void addBall() {
 		ball += ADD_HINT.getNumber();
 	}

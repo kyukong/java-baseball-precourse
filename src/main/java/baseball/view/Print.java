@@ -14,4 +14,8 @@ public class Print {
 	public static void printInputNumbers() {
 		print(INPUT_NUMBERS);
 	}
+
+	public static void printHint(String hint) {
+		println(hint);
+	}
 }
