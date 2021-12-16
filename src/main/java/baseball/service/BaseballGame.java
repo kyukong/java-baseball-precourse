@@ -1,9 +1,11 @@
 package baseball.service;
 
+import baseball.repository.AnswerRepository;
 import baseball.repository.CorrectRepository;
 
 public class BaseballGame {
 	private CorrectRepository correct;
+	private AnswerRepository answer;
 
 	public BaseballGame() {}
 
@@ -11,7 +13,9 @@ public class BaseballGame {
 		correct = new CorrectRepository();
 	}
 
-	// 사용자 입력값을 이용하여 사용자 답 설정
+	public void answer(String answer) {
+		this.answer = new AnswerRepository(answer);
+	}
 
 	// 사용자 입력값과 정답 비교하여 힌트 설정
 

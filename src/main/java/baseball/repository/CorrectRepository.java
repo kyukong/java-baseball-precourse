@@ -7,9 +7,10 @@ import baseball.domain.Number.Correct;
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class CorrectRepository {
+	// TODO: 숫자 규칙 관련 정보들은 enum 클래스로 분리하기 (NumberFormat)
 	private final int NUMBER_COUNT = 3;
-	private final int NUMBER_MINIMUM = 1;
-	private final int NUMBER_MAXIMUM = 9;
+	public static final int NUMBER_MINIMUM = 1;
+	public static final int NUMBER_MAXIMUM = 9;
 
 	public CorrectRepository() {
 		new Correct(getRandomNumbers());

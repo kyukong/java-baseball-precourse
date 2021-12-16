@@ -3,8 +3,8 @@ package baseball.domain.Number;
 import java.util.ArrayList;
 
 public class Number {
-	private static final int NUMBER_COUNT = 3;
-	private static final String SPLIT = "";
+	public static final int NUMBER_COUNT = 3;
+	public static final String SPLIT = "";
 
 	ArrayList<Integer> numbers = new ArrayList<>(NUMBER_COUNT);
 
