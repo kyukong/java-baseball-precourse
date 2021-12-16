@@ -2,10 +2,12 @@ package baseball.service;
 
 import baseball.repository.AnswerRepository;
 import baseball.repository.CorrectRepository;
+import baseball.repository.HintRepository;
 
 public class BaseballGame {
 	private CorrectRepository correct;
 	private AnswerRepository answer;
+	private HintRepository hint;
 
 	public BaseballGame() {}
 
@@ -17,7 +19,9 @@ public class BaseballGame {
 		this.answer = new AnswerRepository(answer);
 	}
 
-	// 사용자 입력값과 정답 비교하여 힌트 설정
+	public void compare() {
+		hint = new HintRepository(correct, answer);
+	}
 
 	// 힌트에 따른 결과 출력
 }

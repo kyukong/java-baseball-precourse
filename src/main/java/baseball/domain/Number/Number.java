@@ -7,7 +7,7 @@ import static baseball.domain.Number.NumberFormat.*;
 public class Number {
 	ArrayList<Integer> numbers = new ArrayList<>(NUMBER_COUNT.getNumber());
 
-	Number() {}
+	public Number() {}
 
 	public Number(ArrayList<Integer> numbers) {
 		this.numbers = numbers;
@@ -17,5 +17,9 @@ public class Number {
 		for (String number : numbers.split(SPLIT.getValue())) {
 			this.numbers.add(Integer.parseInt(number));
 		}
+	}
+
+	public ArrayList<Integer> getNumbers() {
+		return this.numbers;
 	}
 }

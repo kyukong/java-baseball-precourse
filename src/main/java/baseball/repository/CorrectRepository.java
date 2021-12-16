@@ -1,19 +1,18 @@
 package baseball.repository;
 
 import java.util.ArrayList;
-
 import baseball.domain.Number.Correct;
 
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
-
 import static baseball.domain.Number.NumberFormat.*;
 
-public class CorrectRepository {
+public class CorrectRepository extends Correct {
+
 	public CorrectRepository() {
-		new Correct(getRandomNumbers());
+		super(getRandomNumbers());
 	}
 
-	private ArrayList<Integer> getRandomNumbers() {
+	private static ArrayList<Integer> getRandomNumbers() {
 		ArrayList<Integer> numbers = new ArrayList<>(NUMBER_COUNT.getNumber());
 
 		int numberCount = 0;
@@ -29,7 +28,7 @@ public class CorrectRepository {
 		return numbers;
 	}
 
-	private int getRandomNumber() {
+	private static int getRandomNumber() {
 		return pickNumberInRange(NUMBER_MINIMUM.getNumber(), NUMBER_MAXIMUM.getNumber());
 	}
 }

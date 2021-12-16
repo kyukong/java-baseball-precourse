@@ -4,6 +4,7 @@ public enum NumberFormat {
 	NUMBER_COUNT(3),
 	NUMBER_MINIMUM(1),
 	NUMBER_MAXIMUM(9),
+	ADD_HINT(1),
 	SPLIT("");
 
 	private int number;

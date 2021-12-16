@@ -1,8 +1,10 @@
 package baseball.domain.Number;
 
-public class Answer {
+public class Answer extends Number {
+
+	public Answer() {}
 
 	public Answer(String numbers) {
-		new Number(numbers);
+		super(numbers);
 	}
 }
