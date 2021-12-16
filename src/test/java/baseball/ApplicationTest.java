@@ -1,10 +1,12 @@
 package baseball;
 
 import baseball.domain.AnswerExceptionTest;
+import baseball.domain.NewGameExceptionTest;
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.Test;
 
 import static baseball.domain.AnswerExceptionTest.*;
+import static baseball.domain.NewGameExceptionTest.*;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -31,6 +33,17 @@ class ApplicationTest extends NsTest {
         for (AnswerExceptionTest test : data) {
             assertSimpleTest(() ->
                 assertThatThrownBy(() -> runException(test.answer))
+                    .isInstanceOf(IllegalArgumentException.class)
+            );
+        }
+    }
+
+    @Test
+    void 재시작_예외_테스트(){
+        ArrayList<NewGameExceptionTest> data = getNewGameExceptionTest();
+        for (NewGameExceptionTest test : data) {
+            assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException(test.input))
                     .isInstanceOf(IllegalArgumentException.class)
             );
         }
