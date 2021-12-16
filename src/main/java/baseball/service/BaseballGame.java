@@ -13,7 +13,6 @@ public class BaseballGame {
 
 	public void createCorrect() {
 		correct = new CorrectRepository();
-		System.out.println(correct.getNumbers());
 	}
 
 	public void answer(String answer) {

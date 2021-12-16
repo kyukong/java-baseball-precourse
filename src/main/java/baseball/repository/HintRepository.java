@@ -20,11 +20,11 @@ public class HintRepository extends Hint {
 			if (!correct.contains(nowAnswer)) {
 				continue;
 			}
-			if (nowAnswer == correct.indexOf(i)) {
-				addBall();
+			if (nowAnswer == correct.get(i)) {
+				addStrike();
 				continue;
 			}
-			addStrike();
+			addBall();
 		}
 	}
 
