@@ -3,10 +3,7 @@ package baseball.validator;
 import java.util.Arrays;
 import java.util.HashSet;
 
-import static baseball.domain.Number.Number.NUMBER_COUNT;
-import static baseball.domain.Number.Number.SPLIT;
-import static baseball.repository.CorrectRepository.NUMBER_MINIMUM;
-import static baseball.repository.CorrectRepository.NUMBER_MAXIMUM;
+import static baseball.domain.Number.NumberFormat.*;
 
 public class Validator {
 	private static void throwError() {
@@ -17,7 +14,7 @@ public class Validator {
 		if (!isProperLength(str)) {
 			throwError();
 		}
-		String[] numbers = str.split(SPLIT);
+		String[] numbers = str.split(SPLIT.getValue());
 		for (String number : numbers) {
 			if (!isProperNumber(number)) {
 				throwError();
@@ -29,7 +26,7 @@ public class Validator {
 	}
 
 	private static boolean isProperLength(String str) {
-		return str.length() == NUMBER_COUNT;
+		return str.length() == NUMBER_COUNT.getNumber();
 	}
 
 	private static boolean isProperNumber(String str) {
@@ -37,7 +34,7 @@ public class Validator {
 		try {
 			number = Integer.parseInt(str);
 
-			if (number < NUMBER_MINIMUM || NUMBER_MAXIMUM < number) {
+			if (number < NUMBER_MINIMUM.getNumber() || NUMBER_MAXIMUM.getNumber() < number) {
 				return false;
 			}
 		} catch (Exception e) {
@@ -48,6 +45,6 @@ public class Validator {
 
 	private static boolean isDuplicated(String[] numbers) {
 		HashSet<String> removedNumbers = new HashSet<>(Arrays.asList(numbers));
-		return removedNumbers.size() != NUMBER_COUNT;
+		return removedNumbers.size() != NUMBER_COUNT.getNumber();
 	}
 }

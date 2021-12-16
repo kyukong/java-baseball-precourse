@@ -2,11 +2,10 @@ package baseball.domain.Number;
 
 import java.util.ArrayList;
 
-public class Number {
-	public static final int NUMBER_COUNT = 3;
-	public static final String SPLIT = "";
+import static baseball.domain.Number.NumberFormat.*;
 
-	ArrayList<Integer> numbers = new ArrayList<>(NUMBER_COUNT);
+public class Number {
+	ArrayList<Integer> numbers = new ArrayList<>(NUMBER_COUNT.getNumber());
 
 	Number() {}
 
@@ -15,7 +14,7 @@ public class Number {
 	}
 
 	public Number(String numbers) {
-		for (String number : numbers.split(SPLIT)) {
+		for (String number : numbers.split(SPLIT.getValue())) {
 			this.numbers.add(Integer.parseInt(number));
 		}
 	}
