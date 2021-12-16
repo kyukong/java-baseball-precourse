@@ -2,7 +2,7 @@ package baseball.domain.Number;
 
 import java.util.ArrayList;
 
-import static baseball.domain.Number.NumberFormat.*;
+import static baseball.type.NumberFormat.*;
 
 public class Number {
 	ArrayList<Integer> numbers = new ArrayList<>(NUMBER_COUNT.getNumber());

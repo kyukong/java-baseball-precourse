@@ -4,6 +4,7 @@ import baseball.service.BaseballGame;
 
 import static baseball.view.Input.*;
 import static baseball.view.Print.*;
+import static baseball.type.GameType.*;
 
 public class BaseballGameController {
 	private BaseballGame game;
@@ -14,10 +15,13 @@ public class BaseballGameController {
 
 	public void start() {
 		createCorrect();
-		insertNumbers();
+		play();
+	}
 
+	private void play() {
+		insertNumbers();
 		showHint();
-		// 힌트에 따른 결과 처리 - 다시 입력받음, 게임 재시작여부 확인
+		end();
 	}
 
 	private void createCorrect() {
@@ -34,5 +38,21 @@ public class BaseballGameController {
 		game.compare();
 
 		game.showHint();
+	}
+
+	private void end() {
+		if (!game.isCorrect()) {
+			play();
+			return;
+		}
+		printWin();
+		checkNewGame();
+	}
+
+	private void checkNewGame() {
+		String newGameFlag = inputNewGameFlag();
+		if (Integer.parseInt(newGameFlag) == NEW_GAME.getNumber()) {
+			start();
+		}
 	}
 }

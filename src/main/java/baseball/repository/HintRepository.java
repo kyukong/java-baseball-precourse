@@ -3,8 +3,8 @@ package baseball.repository;
 import baseball.domain.Hint.Hint;
 import java.util.ArrayList;
 
-import static baseball.domain.Number.NumberFormat.*;
-import static baseball.domain.Hint.HintType.*;
+import static baseball.type.NumberFormat.*;
+import static baseball.type.HintType.*;
 import static baseball.view.Print.*;
 
 public class HintRepository extends Hint {
@@ -46,5 +46,9 @@ public class HintRepository extends Hint {
 			hintMessage += NOTHING.getName();
 		}
 		return hintMessage;
+	}
+
+	public boolean isCorrect() {
+		return this.getStrike() == NUMBER_COUNT.getNumber();
 	}
 }

@@ -13,6 +13,7 @@ public class BaseballGame {
 
 	public void createCorrect() {
 		correct = new CorrectRepository();
+		System.out.println(correct.getNumbers());
 	}
 
 	public void answer(String answer) {
@@ -26,5 +27,9 @@ public class BaseballGame {
 
 	public void showHint() {
 		hint.show();
+	}
+
+	public boolean isCorrect() {
+		return hint.isCorrect();
 	}
 }

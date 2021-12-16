@@ -1,4 +1,4 @@
-package baseball.domain.Hint;
+package baseball.type;
 
 public enum HintType {
 	BALL("볼"),

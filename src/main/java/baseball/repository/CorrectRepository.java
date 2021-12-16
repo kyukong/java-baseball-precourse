@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import baseball.domain.Number.Correct;
 
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
-import static baseball.domain.Number.NumberFormat.*;
+import static baseball.type.NumberFormat.*;
 
 public class CorrectRepository extends Correct {
 

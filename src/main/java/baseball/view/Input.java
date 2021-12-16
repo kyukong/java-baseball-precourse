@@ -11,4 +11,11 @@ public class Input {
 
 		return input;
 	}
+
+	public static String inputNewGameFlag() {
+		String input = readLine();
+		validateNewGameFlag(input);
+
+		return input;
+	}
 }

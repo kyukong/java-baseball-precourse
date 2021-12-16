@@ -1,6 +1,6 @@
 package baseball.domain.Hint;
 
-import static baseball.domain.Number.NumberFormat.*;
+import static baseball.type.NumberFormat.*;
 
 public class Hint {
 	int ball = 0;

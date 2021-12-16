@@ -1,4 +1,4 @@
-package baseball.domain.Number;
+package baseball.type;
 
 public enum NumberFormat {
 	NUMBER_COUNT(3),
